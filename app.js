@@ -54,7 +54,7 @@ mongoose
         `mongodb://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0-shard-00-00.lqivf.mongodb.net:27017,cluster0-shard-00-01.lqivf.mongodb.net:27017,cluster0-shard-00-02.lqivf.mongodb.net:27017/${process.env.DB_NAME}?ssl=true&replicaSet=atlas-o83qaf-shard-0&authSource=admin&retryWrites=true&w=majority`
     )
     .then(() => {
-        app.listen(5000);
+        app.listen(process.env.PORT || 5000);
     })
     .catch((err) => {
         console.log(err);
